@@ -2,9 +2,13 @@ cmake_minimum_required(VERSION 2.8.4)
 
 add_executable(main main.c)
 
-include_directories(../include/hello)
-
-find_library(HELLO_LIB NAMES hello PATHS "../lib/")
+# include_directories(../include/hello)
+target_include_directories(main
+    PUBLIC ../include/hello
+)
+message(STATUS ${PROJECT_BINARY_DIR})
+# HELLO_LIB 存储找到的库路径的变量名
+find_library(HELLO_LIB NAMES hello PATHS "${CMAKE_INSTALL_PREFIX}/lib/")
 
 message(STATUS "Library path HELLO_LIB is " ${HELLO_LIB})
 

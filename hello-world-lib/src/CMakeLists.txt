@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8.4)
 
 set(LIBHELLO_SRC hello.c)
-
+# add_library是 **CMake 中创建库（Library）的核心命令**，用于将源代码编译成库文件（静态库、动态库等）。
 add_library(hello_dynamic SHARED ${LIBHELLO_SRC})
 add_library(hello_static STATIC ${LIBHELLO_SRC})
 
