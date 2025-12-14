@@ -4,8 +4,8 @@ add_executable(curltest main.c)
 
 #include_directories(/usr/local/include)
 #target_link_libraries(curltest curl)
-
-find_package(curl)
+# 需要下载CURL对应的开发包 才有头文件
+find_package(CURL)
 
 if(CURL_FOUND)
   include_directories(${CURL_INCLUDE_DIR})
